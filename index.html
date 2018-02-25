@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parsley, the ultimate frontend javascript form validation library">
+    <meta name="author" content="Guillaume Potier">
+
+    <title>Black Sheep Transport</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/github.min.css" rel="stylesheet">
+    <link href="css/parsley.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+  </head>
+
+  <body class="examples">
+
+    <div class="container">
+    <header>
+
+      <img id="logo" alt="" src="images/logo.png">        
+      <div class="open"> 
+        <span class="close"></span> 
+        <span>
+          <ul class="sub-menu ">
+            <li> <a class="item" href="home.html">Home</a> </li>
+            <li> <a class="item" href="index.html">Transport</a> </li>
+            <li> <a class="item" href="#">Contact</a> </li>
+          </ul>
+        </span> 
+        <span class="close"></span> 
+      </div>
+
+    </header>
+    
+    <section class="hero">
+      <div class="transport">
+        <h1 id="transportHead">
+          Book Transport
+          <hr>
+        </h1>
+
+        <p id="transportP">
+          We provide different ways of transportation to our customers. Depending on the number of people involved we can provide you with a small/large car, a van or even a motorcycle. You need a valid drivers licence and proof of travel details.
+        </p>
+
+        
+      </div>  
+    </section>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          
+          <span class="clearfix"></span>
+
+          <div class="form-group example">
+<form class="demo-form" id="TransportForm">
+  <legend>Details</legend>
+    <div class="form-section">
+    
+    <label>First Name:</label>
+    <input type="text" class="form-control" name="firstname" required />
+
+    <label>Last Name:</label>
+    <input type="text" class="form-control" name="lastname" required />
+
+    <label>Email:</label>
+    <input type="email" class="form-control" name="email" required />
+    
+    <label>Phone Number</label>
+    <input class="form-control" type="Number">
+     
+    <label>Pick Up Date</label>
+    <input class="form-control" type="date" required>    
+  
+  </div>
+
+  <div class="form-section">
+    <h2 class="a">Destination</h2>
+
+    <label>
+      <input class="form-check-input" type="radio" name="destinations" value="Piha" onclick="calculateTotal()" required> Auckland to Piha
+    </label>   
+    <br>
+    <label>
+      <input class="form-check-input" type="radio" name="destinations" value="Hamilton" onclick="calculateTotal()" required> Auckland to Hamilton
+    </label> 
+    <br>
+    <label>
+      <input class="form-check-input" type="radio" name="destinations" value="Tauranga" onclick="calculateTotal()" required> Auckland to Tauranga 
+    </label>
+    <br>
+    <label>
+      <input class="form-check-input " type="radio" name="destinations" value="Rotorua" onclick="calculateTotal()" required> Auckland to Rotorua   
+    </label> 
+    <br>
+    <hr>
+    <label class="a">Number of Days</label>
+         
+                  <select id="days" name='days'  onchange="calculateTotal()" required>
+                    <option>
+                      Choose the number of days
+                  </option>
+
+                    <option value="1" id="one">
+                      1 day
+                  </option>
+                    
+                    <option value="2" id="two">
+                      2 days
+                  </option>
+
+                    <option value="3" >
+                      3 days
+                  </option>
+
+                  <option value="4" id="four">
+                      4 days
+                  </option>
+                    
+                    <option value="5" id="five">
+                      5 days
+                  
+                  </option>
+
+                  <option value="6" id="six">
+                      6 days
+                  </option>
+
+                  <option value="7" id="seven">
+                      7 days
+                  </option>
+                  
+                  <option value="8" id="eight">
+                      8 days
+                  </option>
+
+                  <option value="9" id="nine">
+                      9 days
+                  </option>
+
+                    <option value="10" id="ten">
+                      10 days
+                  </option>
+                    
+                    <option value="11" id="eleven">
+                      11 days
+                  </option>
+
+                    <option value="12" id="twelve">
+                      12 days
+                  </option>
+                    
+                    <option value="13" id="thirteen">
+                      13 days
+                  </option>
+
+                    <option value="14" id="fourteen">
+                      14 days
+                  </option>
+
+                    <option value="15" id="fifteen">
+                      15 days
+                    </option>
+                </select>
+
+              <br/>
+              <hr>
+              <h2 class="a">Vehicle Types</h2>
+                  
+                  <label class='people'>
+                    <input type="radio"  name="vehicleType" value="bike" onclick="calculateTotal()" required/>  1 Person ($109 per day)
+                  </label>
+                  <br/>
+
+                  <label class='people'>
+                    <input type="radio"  name="vehicleType" value="smallCar" onclick="calculateTotal()" required> 2 people max ($129 per day)
+                  </label>
+                  <br/>
+
+                  <label class='people'>
+                    <input type="radio"  name="vehicleType" value="largeCar" onclick="calculateTotal()" required> 1-5 people ($144 per day)
+                  </label>
+                  <br/>
+
+                  <label class='people'>
+                    <input type="radio"  name="vehicleType" value="van" onclick="calculateTotal()" required > 2-6 people ($200 per day)
+                  </label>
+                  <br/>
+                  <br/>
+
+                <label class='Insurance'>
+                  <input type="checkbox"  name="Insurance" value="20" onclick="calculateTotal()" > Insurance ($20/day)
+                </label >
+                <br>
+                <span>Press the reload button if you change your mind on the date, destination or the number of people!</span>
+                <button onclick="myFunction()">Reload Page</button>
+                <div id="totalPrice">
+                </div>
+
+                </div>
+
+  <div class="form-section">
+  <p>Thank you, we will contact you shortly with the pick up locations!</p>
+  </div>
+
+  <div class="form-navigation">
+    <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
+    <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
+    <input type="submit" class="btn btn-default pull-right" />
+    <span class="clearfix"></span>
+  </div>
+
+</form>
+          </div>
+        </div>
+       </div>
+      </div>
+
+   
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/calc.js"></script>
+    <script src="js/parsley.js"></script>
+    <script src="js/extras.js"></script>
+
+
+
+  </body>
+</html>
